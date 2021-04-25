@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "4c374f5b-1da4-43ba-a3b5-95e7aadcc3c7",
+		"name": "Redarbor rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserta un nuevo Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CompanyId\": 1,\r\n    \"CreatedOn\": \"2000-01-01 00:00:00\",\r\n    \"DeletedOn\": \"2000-01-01 00:00:00\",\r\n    \"Email\": \"test1@test.test.tmp\",\r\n    \"Fax\": \"000.000.000\",\r\n    \"Name\": \"test1\",\r\n    \"Lastlogin\": \"2000-01-01 00:00:00\",\r\n    \"Password\": \"test\",\r\n    \"PortalId\": 1,\r\n    \"RoleId\": 1,\r\n    \"StatusId\": 1,\r\n    \"Telephone\": \"000.000.000\",\r\n    \"UpdatedOn\": \"2000-01-01 00:00:00\",\r\n    \"Username\": \"test1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2:Ejecuta la llamada GET para ver que está insertado correctamente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Ejecuta la llamada GET para ese id.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Modifica el registro insertado para que su usuario sea “test1updated”",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CompanyId\": 1,\r\n    \"CreatedOn\": \"2000-01-01 00:00:00\",\r\n    \"DeletedOn\": \"2000-01-01 00:00:00\",\r\n    \"Email\": \"test1@test.test.tmp\",\r\n    \"Fax\": \"000.000.000\",\r\n    \"Name\": \"test1\",\r\n    \"Lastlogin\": \"2000-01-01 00:00:00\",\r\n    \"Password\": \"test\",\r\n    \"PortalId\": 1,\r\n    \"RoleId\": 1,\r\n    \"StatusId\": 1,\r\n    \"Telephone\": \"000.000.000\",\r\n    \"UpdatedOn\": \"2000-01-01 00:00:00\",\r\n    \"Username\": \"test1updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Verificar que se ha modificado.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Borrar el nuevo registro.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Comprobar que no existe.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:36862/api/Redarbor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "36862",
+					"path": [
+						"api",
+						"Redarbor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
