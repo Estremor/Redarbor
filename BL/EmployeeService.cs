@@ -38,22 +38,7 @@ namespace BL
                 throw new Exception($"El valor enviado para el {nameof(id)} no es valido {id}");
             if (!_employeeRepo.ExistById(id))
                 throw new Exception($"El {nameof(Employee)} con {nameof(id)} =>  {id} no existe");
-            #region Validations
-            //if (employee.CompanyId < 1)
-            //    throw new Exception($"El valor enviado para el {nameof(employee.CompanyId)} no es valido {employee.CompanyId}");
-            //if (string.IsNullOrWhiteSpace(employee.Name))
-            //    throw new Exception($"El valor enviado para el {nameof(employee.Name)} no es valido {employee.Name}");
-            //if (string.IsNullOrWhiteSpace(employee.Password))
-            //    throw new Exception($"El valor enviado para el {nameof(employee.Password)} no es valido {employee.Password}");
-            //if (employee.PortalId < 1)
-            //    throw new Exception($"El valor enviado para el {nameof(employee.PortalId)} no es valido {employee.PortalId}");
-            //if (employee.RoleId < 1)
-            //    throw new Exception($"El valor enviado para el {nameof(employee.RoleId)} no es valido {employee.RoleId}");
 
-            //if (string.IsNullOrWhiteSpace(employee.Username))
-            //    throw new Exception($"El valor enviado para el {nameof(employee.Username)} no es valido {employee.Username}");
-
-            #endregion
             var employeeEntity = _mapper.Map<Employee>(employee);
             employeeEntity.Id = id;
             _employeeRepo.Update(employeeEntity);
